@@ -10,9 +10,10 @@ export class TodayService {
   getToday() {
     const date = new Date();
     const year = date.getFullYear(); 
-    return { heisei: year - 1989 + 1,
-             showa:  year - 1926 + 1,
-             taisho: year - 1912 + 1,
-             meiji:  year - 1868 + 1 };
+    return { seireki: year,
+             heisei:  year - 1989 + 1,
+             showa:   year - 1926 + 1,
+             taisho:  year - 1912 + 1,
+             meiji:   year - 1868 + 1 };
   }
 }

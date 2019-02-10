@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Today } from '../today';
+import { TodayService } from '../today.service';
 
 @Component({
   selector: 'app-today',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./today.component.scss']
 })
 export class TodayComponent implements OnInit {
+  today: Today;
 
-  constructor() { }
+  constructor(private todayService: TodayService) { }
 
   ngOnInit() {
+    this.getToday();
   }
 
+  getToday() {
+    this.today = this.todayService.getToday();
+    console.log(this.today.year);
+    console.log(this.today.month);
+    console.log(this.today.day);
+  }
 }

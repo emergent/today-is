@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Today } from './today';
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +8,12 @@ export class TodayService {
 
   constructor() { }
 
-  getToday() {
+  getToday(): Today {
     const date = new Date();
-    const year = date.getFullYear(); 
-    return { seireki: year,
-             heisei:  year - 1989 + 1,
-             showa:   year - 1926 + 1,
-             taisho:  year - 1912 + 1,
-             meiji:   year - 1868 + 1 };
+    const today: Today = {
+              year:  date.getFullYear(),
+              month: date.getMonth() + 1,
+              day:   date.getDate() };
+    return today;
   }
 }

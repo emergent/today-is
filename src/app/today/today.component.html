@@ -1,3 +1,21 @@
-<p>
-  today works!
-</p>
+<div *ngIf="today">
+  <h2>{{ today.year }}年{{ today.month }}月{{ today.day }}日です</h2>
+
+  <div>
+    <ul>
+      <li>
+        平成では{{ today.year - 1989 + 1 }}年
+      </li>
+      <li>
+        昭和では{{ today.year - 1926 + 1 }}年
+      </li>
+      <li>
+        大正では{{ today.year - 1912 + 1 }}年
+      </li>
+      <li>
+        明治では{{ today.year - 1868 + 1 }}年
+      </li>
+    </ul>
+  </div>
+
+</div>

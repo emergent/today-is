@@ -18,8 +18,5 @@ export class TodayComponent implements OnInit {
 
   getToday() {
     this.today = this.todayService.getToday();
-    console.log(this.today.year);
-    console.log(this.today.month);
-    console.log(this.today.day);
   }
 }
